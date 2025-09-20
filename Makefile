@@ -7,14 +7,14 @@ TARGET:=$(GOPATH)/bin/grafana-reporter
 ifeq ($(OS),Windows_NT)
 	TARGET:=$(GOPATH)/bin/grafana-reporter.exe
 endif
-SRC:=$(GOPATH)/src/github.com/IzakMarais/reporter
+SRC:=$(GOPATH)/src/github.com/djedu/reporter
 
 .PHONY: buildall
 buildall: build buildlinux
 
 .PHONY: build
 build: 
-	go install -v github.com/IzakMarais/reporter/cmd/grafana-reporter
+	go install -v github.com/djedu/reporter/cmd/grafana-reporter
 
 .PHONY: buildlinux 
 buildlinux: 	
@@ -26,10 +26,10 @@ clean:
 
 .PHONY: docker-build
 docker-build:
-	@docker build -t izakmarais/grafana-reporter:2.3.0 -t izakmarais/grafana-reporter:latest .
+	@docker build --platform linux/amd64 -t djedu/grafana-reporter:2.3.0 -t djedu/grafana-reporter:latest .
 
 docker-push:
-	@docker push izakmarais/grafana-reporter
+	@docker push djedu/grafana-reporter
 
 .PHONY: test
 test: $(TARGET)

@@ -25,8 +25,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/IzakMarais/reporter/grafana"
 	"github.com/IzakMarais/reporter/report"
+	"github.com/djedu/reporter/grafana"
 	"github.com/gorilla/mux"
 	. "github.com/smartystreets/goconvey/convey"
 )

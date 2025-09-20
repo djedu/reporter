@@ -25,7 +25,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/IzakMarais/reporter/grafana"
+	"github.com/djedu/reporter/grafana"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -166,7 +166,7 @@ func (e *errClient) GetDashboard(dashName string) (grafana.Dashboard, error) {
 	return grafana.NewDashboard([]byte(dashJSON), e.variables), nil
 }
 
-//Produce an error on the 2nd panel fetched
+// Produce an error on the 2nd panel fetched
 func (e *errClient) GetPanelPng(p grafana.Panel, dashName string, t grafana.TimeRange) (io.ReadCloser, error) {
 	e.getPanelCallCount++
 	if e.getPanelCallCount == 2 {
