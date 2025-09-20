@@ -18,7 +18,7 @@ build:
 
 .PHONY: buildlinux 
 buildlinux: 	
-	cmd //v //c "set GOOS=linux&&go install -v github.com/IzakMarais/reporter/cmd/grafana-reporter"
+	cmd //v //c "set GOOS=linux&&go install -v github.com/djedu/reporter/cmd/grafana-reporter"
 
 .PHONY: clean
 clean: 	
