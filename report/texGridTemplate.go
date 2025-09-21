@@ -25,12 +25,9 @@ const defaultGridTemplate = `
 \usepackage[margin=0.5in]{geometry}
 
 \usepackage[T1]{fontenc}
-\usepackage{helvet}
+\usepackage{helvetic}
 \usepackage[dvipsnames]{xcolor}
 
-\colorlet{LightRubineRed}{RubineRed!70}
-\colorlet{Mycolor1}{green!10!orange}
-\definecolor{Mycolor2}{HTML}{00F9DE}
 \definecolor{BG-Color}{HTML}{111217}
 
 \graphicspath{ {images/} }
