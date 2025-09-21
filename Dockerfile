@@ -58,6 +58,10 @@ RUN PACKAGES="wget perl-switch" \
         && chmod -R g+w /opt/TinyTeX \
         && chmod -R g+wx /opt/TinyTeX/bin \
         && tlmgr install epstopdf-pkg \
+        && tlmgr install grfext \
+        && tlmgr install fontenc \
+        && tlmgr install helvet \
+        && tlmgr install xcolor \
         # Cleanup
         && apk del --purge -qq $PACKAGES \
         && apk del --purge -qq \
