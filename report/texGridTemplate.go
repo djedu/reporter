@@ -13,7 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-   
+
 */
 
 package report
@@ -24,8 +24,21 @@ const defaultGridTemplate = `
 \usepackage{graphicx}
 \usepackage[margin=0.5in]{geometry}
 
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage[dvipsnames]{xcolor}
+
+\colorlet{LightRubineRed}{RubineRed!70}
+\colorlet{Mycolor1}{green!10!orange}
+\definecolor{Mycolor2}{HTML}{00F9DE}
+\definecolor{BG-Color}{HTML}{111217}
+
 \graphicspath{ {images/} }
 \begin{document}
+
+\pagecolor{BG-Color}
+\color{white}
+
 \title{[[.Title]] [[if .VariableValues]] \\ \large [[.VariableValues]] [[end]] [[if .Description]] \\ \small [[.Description]] [[end]]}
 \date{[[.FromFormatted]]\\to\\[[.ToFormatted]]}
 \maketitle
@@ -43,3 +56,14 @@ const defaultGridTemplate = `
 \end{center}
 \end{document}
 `
+
+// \begin{itemize}
+// \item \textcolor{Mycolor1}{First item}
+// \item \textcolor{Mycolor2}{Second item}
+// \end{itemize}
+
+// \noindent
+// {\color{LightRubineRed} \rule{\linewidth}{1mm}}
+
+// \noindent
+// {\color{RubineRed} \rule{\linewidth}{1mm}}
